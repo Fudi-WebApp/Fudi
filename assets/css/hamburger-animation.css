@@ -1,0 +1,63 @@
+/* Use the variables below to create a unique hamburger */
+.cover { display: block; z-index: 999; width: 40px; height: 40px; cursor: pointer; float: left; position: absolute; top: 20px; right: 20px; }
+
+.cover:hover .line, .cover:hover .line:before, .cover:hover .line:after { background: #000; -webkit-transition: 0.2s ease; transition: 0.2s ease; }
+
+.cover.open .line, .cover.open .line:before, .cover.open .line:after { background: #000; }
+
+.line { border-radius: 10px; width: 40px; height: 5px; background: #000; top: 12px; position: relative; -webkit-transition: 0.2s ease; transition: 0.2s ease; }
+.line:before { border-radius: 10px; width: 40px; height: 5px; background-color: #000; top: -12px; content: ''; left: 0; position: absolute; }
+.line:after { border-radius: 10px; width: 40px; height: 5px; background-color: #000; top: 12px; content: ''; left: 0; position: absolute; }
+
+.line.animate { -webkit-animation: mymove3 0.2s forwards; animation: mymove3 0.2s forwards; }
+.line.animate:before { -webkit-animation: mymove 0.5s forwards; animation: mymove 0.5s forwards; }
+.line.animate:after { -webkit-animation: mymove2 0.5s forwards; animation: mymove2 0.5s forwards; }
+
+.line.reverse { -webkit-animation: mymove6 0.2s forwards; animation: mymove6 0.2s forwards; }
+.line.reverse:before { -webkit-animation: mymove4 0.5s forwards; animation: mymove4 0.5s forwards; }
+.line.reverse:after { -webkit-animation: mymove5 0.5s forwards; animation: mymove5 0.5s forwards; }
+
+@keyframes mymove { 0% { top: -12px; }
+  50% { top: 0; }
+  51% { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg); -moz-transform: rotate(0deg); }
+  100% { transform: rotate(-45deg); -webkit-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -moz-transform: rotate(-45deg); top: 0; } }
+@keyframes mymove2 { 0% { top: 12px; }
+  50% { top: 0; }
+  51% { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg); -moz-transform: rotate(0deg); }
+  100% { transform: rotate(45deg); -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); -moz-transform: rotate(45deg); top: 0; } }
+@keyframes mymove3 { 99% { width: 40px; }
+  100% { width: 0px; } }
+@keyframes mymove4 { 0% { transform: rotate(-45deg); -webkit-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -moz-transform: rotate(-45deg); top: 0; }
+  50% { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg); -moz-transform: rotate(0deg); }
+  51% { top: 0; }
+  100% { top: -12px; } }
+@keyframes mymove5 { 0% { transform: rotate(45deg); -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); -moz-transform: rotate(45deg); top: 0; }
+  50% { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg); -moz-transform: rotate(0deg); }
+  51% { top: 0; }
+  100% { top: 12px; } }
+@keyframes mymove6 { 0% { width: 0px; }
+  99% { width: 0px; }
+  100% { width: 40px; } }
+@-webkit-keyframes mymove { 0% { top: -12px; }
+  50% { top: 0; }
+  51% { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg); -moz-transform: rotate(0deg); }
+  100% { transform: rotate(-45deg); -webkit-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -moz-transform: rotate(-45deg); top: 0; } }
+@-webkit-keyframes mymove2 { 0% { top: 12px; }
+  50% { top: 0; }
+  51% { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg); -moz-transform: rotate(0deg); }
+  100% { transform: rotate(45deg); -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); -moz-transform: rotate(45deg); top: 0; } }
+@-webkit-keyframes mymove3 { 99% { width: 40px; }
+  100% { width: 0px; } }
+@-webkit-keyframes mymove4 { 0% { transform: rotate(-45deg); -webkit-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -moz-transform: rotate(-45deg); top: 0; }
+  50% { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg); -moz-transform: rotate(0deg); }
+  51% { top: 0; }
+  100% { top: -12px; } }
+@-webkit-keyframes mymove5 { 0% { transform: rotate(45deg); -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); -moz-transform: rotate(45deg); top: 0; }
+  50% { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg); -moz-transform: rotate(0deg); }
+  51% { top: 0; }
+  100% { top: 12px; } }
+@-webkit-keyframes mymove6 { 0% { width: 0px; }
+  99% { width: 0px; }
+  100% { width: 40px; } }
+
+/*# sourceMappingURL=hamburger-animation.css.map */
