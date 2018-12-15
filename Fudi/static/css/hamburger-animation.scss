@@ -1,0 +1,42 @@
+//_hamburger-animation.scss
+
+/* Use the variables below to create a unique hamburger */
+$width: 40px;
+$height: 5px;
+$topSpacing: 12px;
+$bottomSpacing: -12px;
+$lineColor: #000;
+$lineHover: $lineColor;
+$borderRadius: 10px;
+$timer: .2s;
+$slowTimer: .5s;
+$positionTop: 20px;
+$positionRight: 20px; 
+ 
+.cover { display: block; z-index:999; width: $width; height: $width; cursor: pointer; float: left; position:absolute; top:$positionTop; right:$positionRight;}
+.cover:hover .line, .cover:hover .line:before, .cover:hover .line:after { background: $lineHover; -webkit-transition: $timer ease; transition: $timer ease; }
+.cover.open .line, .cover.open .line:before, .cover.open .line:after {background:#000;}
+.line { border-radius:$borderRadius; width: $width; height: $height; background: $lineColor; top: $topSpacing; position: relative; -webkit-transition: $timer ease; transition: $timer ease; 
+	&:before {border-radius:$borderRadius; width: $width; height: $height; background-color: $lineColor; top: $bottomSpacing; content: ''; left: 0; position: absolute;}
+	&:after {border-radius:$borderRadius; width: $width; height: $height; background-color: $lineColor; top: $topSpacing; content: ''; left: 0; position: absolute; }
+}
+.line.animate {-webkit-animation:mymove3 $timer forwards; -moz-animation:mymove3 $timer forwards; -o-animation:mymove3 $timer forwards; animation:mymove3 $timer forwards;
+	&:before {-webkit-animation:mymove $slowTimer forwards; -moz-animation:mymove $slowTimer forwards; -o-animation:mymove $slowTimer forwards; animation:mymove $slowTimer forwards; }
+	&:after {-webkit-animation:mymove2 $slowTimer forwards; -moz-animation:mymove2 $slowTimer forwards; -o-animation:mymove2 $slowTimer forwards; animation:mymove2 $slowTimer forwards;}
+}
+.line.reverse {-webkit-animation:mymove6 $timer forwards; -moz-animation:mymove6 $timer forwards; -o-animation:mymove6 $timer forwards; animation:mymove6 $timer forwards;
+	&:before {-webkit-animation:mymove4 $slowTimer forwards; -moz-animation:mymove4 $slowTimer forwards; -o-animation:mymove4 $slowTimer forwards; animation:mymove4 $slowTimer forwards;}
+	&:after {-webkit-animation:mymove5 $slowTimer forwards; -moz-animation:mymove5 $slowTimer forwards; -o-animation:mymove5 $slowTimer forwards; animation:mymove5 $slowTimer forwards;}
+}
+@keyframes mymove {0% {top:$bottomSpacing;} 50% {top:0;} 51% {transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); -moz-transform:rotate(0deg);} 100% {transform:rotate(-45deg); -webkit-transform:rotate(-45deg); -ms-transform:rotate(-45deg); -moz-transform:rotate(-45deg); top:0;} }
+@keyframes mymove2 {0% {top:$topSpacing;} 50% {top:0;} 51% {transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); -moz-transform:rotate(0deg);} 100% {transform:rotate(45deg); -webkit-transform:rotate(45deg); -ms-transform:rotate(45deg); -moz-transform:rotate(45deg); top:0;} }
+@keyframes mymove3 {99% {width:$width;} 100% {width:0px;} }
+@keyframes mymove4 {0% {transform:rotate(-45deg); -webkit-transform:rotate(-45deg); -ms-transform:rotate(-45deg); -moz-transform:rotate(-45deg); top:0;} 50% {transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); -moz-transform:rotate(0deg);} 51% {top:0;} 100% {top:$bottomSpacing;} }
+@keyframes mymove5 {0% {transform:rotate(45deg); -webkit-transform:rotate(45deg); -ms-transform:rotate(45deg); -moz-transform:rotate(45deg); top:0;} 50% {transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); -moz-transform:rotate(0deg);} 51% {top:0;} 100% {top:$topSpacing;} }
+@keyframes mymove6 {0% {width:0px;} 99% {width:0px;} 100% {width:$width;} }
+@-webkit-keyframes mymove {0% {top:$bottomSpacing;} 50% {top:0;} 51% {transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); -moz-transform:rotate(0deg);} 100% {transform:rotate(-45deg); -webkit-transform:rotate(-45deg); -ms-transform:rotate(-45deg); -moz-transform:rotate(-45deg); top:0;} }
+@-webkit-keyframes mymove2 {0% {top:$topSpacing;} 50% {top:0;} 51% {transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); -moz-transform:rotate(0deg);} 100% {transform:rotate(45deg); -webkit-transform:rotate(45deg); -ms-transform:rotate(45deg); -moz-transform:rotate(45deg); top:0;} }
+@-webkit-keyframes mymove3 {99% {width:$width;} 100% {width:0px;} }
+@-webkit-keyframes mymove4 {0% {transform:rotate(-45deg); -webkit-transform:rotate(-45deg); -ms-transform:rotate(-45deg); -moz-transform:rotate(-45deg); top:0;} 50% {transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); -moz-transform:rotate(0deg);} 51% {top:0;} 100% {top:$bottomSpacing;} }
+@-webkit-keyframes mymove5 {0% {transform:rotate(45deg); -webkit-transform:rotate(45deg); -ms-transform:rotate(45deg); -moz-transform:rotate(45deg); top:0;} 50% {transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); -moz-transform:rotate(0deg);} 51% {top:0;} 100% {top:$topSpacing;} }
+@-webkit-keyframes mymove6 {0% {width:0px;} 99% {width:0px;} 100% {width:$width;} }
