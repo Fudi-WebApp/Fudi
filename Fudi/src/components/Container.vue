@@ -30,16 +30,24 @@ import quickView from './QuickView'
 
 export default {
 	name: 'Container',
-
 	data () {
 		return {
-			activeTrucks: 31,
+			activeTrucks: 0,
 			trucks: [
+				{title: 'Title', description: 'Something goes here.'},
+				{title: 'Title', description: 'Something goes here.'},
+				{title: 'Title', description: 'Something goes here.'},
+				{title: 'Title', description: 'Something goes here.'},
+				{title: 'Title', description: 'Something goes here.'},
+				{title: 'Title', description: 'Something goes here.'},
 				{title: 'Title', description: 'Something goes here.'},
 				{title: 'Title', description: 'Something goes here.'},
 				{title: 'Title', description: 'Something goes here.'}
 			]
 		}
+	},
+	created() {
+		this.activeTrucks = this.trucks.length;
 	},
 	components: {
 		listViewItem,

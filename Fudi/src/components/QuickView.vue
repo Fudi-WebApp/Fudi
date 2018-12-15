@@ -8,10 +8,10 @@
 				<img src="https://staticmapmaker.com/img/google@2x.png" alt="">
 			</div>
 			<div class="info">
-				<h2>Food Truck 1</h2>
-				<p>555-555-5555
-					<br>foodtruck1@gmail.com
-					<br><a href="">foodtruck1.com</a>
+				<h2>{{}}</h2>
+				<p>{{}}
+					<br>{{}}
+					<br><a href="">{{}}</a>
 				</p>
 				<p>
 					<span class="socialContainer">
