@@ -2,22 +2,28 @@
 	<section>
 		<div class="wrap">
 			<div class="list">
+				
 				<div class="options">
-					<div class="btn">
+					<div @click="listViewClick" class="btn">
 						<span>List View</span>
 					</div>
-					<div class="btn">
+					<div @click="mapViewClick" class="btn">
 						<span>Map View</span>
 					</div>
 					<span class="activeTrucks">{{activeTrucks}} Active Trucks</span>
 				</div>
-				
-				<listViewItem v-for="truck in trucks" :title="truck.title" :desc="truck.description" />
-				
+
+				<div v-if="listView == 1">
+					<listViewItem v-for="truck in trucks" :title="truck.title" :desc="truck.description" />
+				</div>
+				<div v-else>
+					Map View
+				</div>
+
 			</div>
 			<div class="quickView">
 
-				<quickView/>
+				<quickView />
 
 			</div>
 		</div>
@@ -33,6 +39,7 @@ export default {
 	data () {
 		return {
 			activeTrucks: 0,
+			listView: 1,
 			trucks: [
 				{title: 'Title', description: 'Something goes here.'},
 				{title: 'Title', description: 'Something goes here.'},
@@ -44,6 +51,14 @@ export default {
 				{title: 'Title', description: 'Something goes here.'},
 				{title: 'Title', description: 'Something goes here.'}
 			]
+		}
+	},
+	methods: {
+		listViewClick() {
+			this.listView = 1;
+		},
+		mapViewClick() {
+			this.listView = 0;
 		}
 	},
 	created() {
