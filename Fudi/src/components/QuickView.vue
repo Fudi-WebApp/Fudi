@@ -8,7 +8,7 @@
 				<img src="https://staticmapmaker.com/img/google@2x.png" alt="">
 			</div>
 			<div class="info">
-				<h2>{{}}</h2>
+				<h2>{{title}}</h2>
 				<p>{{}}
 					<br>{{}}
 					<br><a href="">{{}}</a>
@@ -31,7 +31,7 @@
 
 export default {
   name: 'QuickView',
-  
+  props: ['title'],
   data () {
     return {
       

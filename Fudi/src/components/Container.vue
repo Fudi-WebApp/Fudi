@@ -2,7 +2,7 @@
 	<section>
 		<div class="wrap">
 			<div class="list">
-				
+
 				<div class="options">
 					<div @click="listViewClick" class="btn">
 						<span>List View</span>
@@ -14,7 +14,7 @@
 				</div>
 
 				<div v-if="listView == 1">
-					<listViewItem v-for="truck in trucks" :title="truck.title" :desc="truck.description" />
+					<listViewItem @mouseover.native="clickQuickView(index)" v-for="(truck, index) in trucks" :title="truck.title" :desc="truck.description" />
 				</div>
 				<div v-else>
 					Map View
@@ -23,7 +23,7 @@
 			</div>
 			<div class="quickView">
 
-				<quickView />
+				<quickView :title="trucks[quickViewActive].title" />
 
 			</div>
 		</div>
@@ -41,16 +41,17 @@ export default {
 			activeTrucks: 0,
 			listView: 1,
 			trucks: [
-				{title: 'Title', description: 'Something goes here.'},
-				{title: 'Title', description: 'Something goes here.'},
-				{title: 'Title', description: 'Something goes here.'},
-				{title: 'Title', description: 'Something goes here.'},
-				{title: 'Title', description: 'Something goes here.'},
-				{title: 'Title', description: 'Something goes here.'},
-				{title: 'Title', description: 'Something goes here.'},
-				{title: 'Title', description: 'Something goes here.'},
-				{title: 'Title', description: 'Something goes here.'}
-			]
+				{title: 'Title 0', description: 'Something goes here.'},
+				{title: 'Title 1', description: 'Something goes here.'},
+				{title: 'Title 2', description: 'Something goes here.'},
+				{title: 'Title 3', description: 'Something goes here.'},
+				{title: 'Title 4', description: 'Something goes here.'},
+				{title: 'Title 5', description: 'Something goes here.'},
+				{title: 'Title 6', description: 'Something goes here.'},
+				{title: 'Title 7', description: 'Something goes here.'},
+				{title: 'Title 8', description: 'Something goes here.'}
+			], 
+			quickViewActive: 0
 		}
 	},
 	methods: {
@@ -59,6 +60,9 @@ export default {
 		},
 		mapViewClick() {
 			this.listView = 0;
+		},
+		clickQuickView(e) {
+			this.quickViewActive = e;
 		}
 	},
 	created() {
