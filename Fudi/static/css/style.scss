@@ -140,8 +140,8 @@ section {margin-top:20px; box-sizing:border-box; margin-bottom:auto; color:$gray
 			h2 {@include font-size(22px); font-weight:bold; margin-bottom:10px;}
 			p {@include font-size(16px); @include line-height(20px); margin-bottom:15px;}
 			span {@include font-size(12px); @include line-height(18px); @extend .flex; align-items:center; }
-			span.tags {margin-right:auto;}
-			span.distance {}
+			span.tags {margin-right:5px;}
+			span.distance {margin-left:auto;}
 		}
 		&:hover {cursor:pointer;
 			.info {background:$beige;}

@@ -348,7 +348,9 @@ section {
         -ms-flex-align: center;
         align-items: center; }
       section .truck .info span.tags {
-        margin-right: auto; }
+        margin-right: 5px; }
+      section .truck .info span.distance {
+        margin-left: auto; }
     section .truck:hover {
       cursor: pointer; }
       section .truck:hover .info {
