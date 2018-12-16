@@ -19,7 +19,7 @@
 					<div @click="nextPage" v-if="activePage < totalPages" class="btn">
 						<span>Next</span>
 					</div>
-					Page: {{activePage}}
+					Page: {{activePage}} | {{totalPages}}
 					<span v-if="listView == 0 || listView == 1" class="activeTrucks">{{activeTrucks}} Active<br>Showing {{totalOnPage}}</span>
 					<span v-else class="activeTrucks">{{favoriteTrucks}} Favorite Trucks</span>
 				</div>
@@ -67,7 +67,8 @@ export default {
 			headers: [],
 			totalPages: 1,
 			activePage: 1,
-			totalOnPage: 0
+			totalOnPage: 0, 
+			perPage: 20
 		}
 	},
 	methods: {
@@ -233,6 +234,7 @@ export default {
 			this.activeTrucks = this.trucks.length;
 		},
 		prevPage() {
+			this.quickViewActive = null;
 			this.loading = 1;
 			if (this.activePage <= 1) {
 				this.activePage = 1;
@@ -242,6 +244,7 @@ export default {
 			this.wp();
 		},
 		nextPage() {
+			this.quickViewActive = null;
 			this.loading = 1;
 			if (this.activePage >= this.totalPages) {
 				this.activePage = this.totalPages;
@@ -251,7 +254,7 @@ export default {
 			this.wp();
 		},
 		wp() {
-			let url = 'http://foodtruckfiesta.com/wp-json/wp/v2/pages?page='+this.activePage+'&per_page='+100;
+			let url = 'http://foodtruckfiesta.com/wp-json/wp/v2/pages?page='+this.activePage+'&per_page='+this.perPage;
 			axios
 				.get(url)
 				.then(response => {
