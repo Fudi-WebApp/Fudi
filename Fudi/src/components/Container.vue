@@ -254,7 +254,7 @@ export default {
 			this.wp();
 		},
 		wp() {
-			let url = 'http://foodtruckfiesta.com/wp-json/wp/v2/pages?orderby=title&order=asc&page='+this.activePage+'&per_page='+this.perPage;
+			let url = 'https://ntknetwork.com/wp-json/wp/v2/pages?orderby=title&order=asc&page='+this.activePage+'&per_page='+this.perPage;
 			axios
 				.get(url)
 				.then(response => {
