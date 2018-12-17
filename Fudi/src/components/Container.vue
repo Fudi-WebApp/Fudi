@@ -252,6 +252,7 @@ export default {
 				this.activePage = this.activePage + 1;
 			}
 			this.wp();
+			
 		},
 		wp() {
 			let url = 'https://ntknetwork.com/wp-json/wp/v2/pages?orderby=title&order=asc&page='+this.activePage+'&per_page='+this.perPage;
