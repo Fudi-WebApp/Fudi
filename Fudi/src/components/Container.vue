@@ -10,9 +10,9 @@
 					<div @click="mapViewClick" class="btn">
 						<span>Map View</span>
 					</div>
-					<div @click="favoritesViewClick" class="btn">
+					<!-- <div @click="favoritesViewClick" class="btn">
 						<span>Favorites</span>
-					</div>
+					</div> -->
 					<div @click="prevPage" v-if="activePage > 1" class="btn">
 						<span>Prev</span>
 					</div>
@@ -254,7 +254,7 @@ export default {
 			this.wp();
 		},
 		wp() {
-			let url = 'http://foodtruckfiesta.com/wp-json/wp/v2/pages?page='+this.activePage+'&per_page='+this.perPage;
+			let url = 'http://foodtruckfiesta.com/wp-json/wp/v2/pages?orderby=title&order=asc&page='+this.activePage+'&per_page='+this.perPage;
 			axios
 				.get(url)
 				.then(response => {
